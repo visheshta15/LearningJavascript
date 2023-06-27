@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <div class="divtag">
+          <p>pppppp</p>
+          <h1>h1111</h1>
+
+        </div>
+        <div class="class2">class2</div>
+        <!-- <li id="id1">id1</li> -->
+        <div id="id2">id2</div>
+    
+      <div class="divtag">
+          <p id="id1">this is visheshta kushwaha</p>
+      </div>
+
+      <!-- event capturing -->
+      <!-- the process starts with capturing the event of the outermost element and then propagating to the inner most element -->
+
+      <!-- event bubbling -->
+      <!-- When an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors. -->
+      <!-- event propgation: in  which order the elements recevived the input  -->
+      <form onclick="console.log('form')" style="background-color: red; height: 150px;">FORM
+        <div onclick="console.log('div')" style="background-color: pink; height: 100px;">DIV
+          <p onclick="console.log('p')" style="background-color: blue;">P</p>
+        </div>
+      </form>
+      <br>
+      <form onclick="function(e){e.target.style.backgroundColor = 'yellow'}" style="background-color: red; height: 150px;">FORM
+        <div onclick="console.log('div')" style="background-color: pink; height: 100px;">DIV
+          <p onclick="console.log('p')" style="background-color: blue;">P</p>
+        </div>
+      </form>
+
+      <!-- The JavaScript
+      :void(0) tells the browser to "do nothing" i.e., prevents the browser from reloading or refreshing the page. It is useful when we insert links that have some important role on the webpage without any reloading. So, using void(0) on such links prevents the reloading of the page but allows to perform a useful function such as updating a value on the webpage. -->
+      <a href="javascript:void(0);https://www.javatpoint.com">link1 void</a>
+      <a href="https://www.javatpoint.com">link1</a>
+      <script src="./2-access-html-element.js"></script>
+
+
+      <!-- cookie -->
+      <input type="button" value="getCookie" onclick="getCookie()"> 
+      <input type="button" value="delCookie" onclick="delCookie()"> 
+</body>
+</html>

@@ -1,0 +1,41 @@
+<html>
+<body>
+    <button id="debounce">Debounce </button>
+    <button id="debounce2" onclick="debounce2()">Debounce2 </button>
+<script>
+    var button = document.getElementById("debounce");
+    const debounce = (func, delay) => {
+        let debounceTimer
+        return function() {
+            const context = this
+            const args = arguments
+                clearTimeout(debounceTimer)
+                debounceTimer= setTimeout(() => func.apply(context, args), delay)
+        }
+    } 
+    button.addEventListener('click', debounce(function() {
+            console.log("Hello\nNo matter how many times you" + "click the debounce button, I get " +  "executed once every seconds!!")
+    }, 1000));
+
+
+    function dothis(){
+        console.log("Hello\nNo matter how many times you" + "click the debounce button, I get " +  "executed once every seconds!!")
+    }
+
+    const betterdebounc = (fu , d) =>{
+        console.log('22');
+        let timer;
+        return function(){
+            const context = this
+            const args = arguments
+            clearTimeout(timer);
+            timer = setTimeout(()=>{
+                fu.apply(this, args)
+            }, d)
+        }
+    }
+    const  debounce2 = betterdebounc(dothis, 100)
+
+</script>
+</body>
+</html>

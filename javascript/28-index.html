@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #child, #child1{
+            height: 50px;
+            width: 50px;
+            background-color: aqua;
+            display: grid;
+            place-items: center;
+        }
+        #parent, #parent1{
+            height: 100px;
+            width: 100px;
+            background-color: teal;
+            display: grid;
+            place-items: center;
+        }
+        #grandparent,  #grandparent1, .div3, #form{
+            height: 150px;
+            width: 300px;
+            background-color: rebeccapurple;
+            display: grid;
+            place-items: center;
+            color: aliceblue;
+        }
+        /* div{
+            border: 2px solid black;
+            padding: 50px;
+            min-height: 100px;
+            min-width: 200px;
+        } */
+    </style>
+</head>
+<body>
+
+   
+    <div id="grandparent">
+        <div id="parent">
+            <div id="child">
+                hello
+            </div>
+        </div>
+    </div>
+    <br>
+    <div id="grandparent1">
+        <div id="parent1">
+            <div id="child1">
+                hello
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="div3">
+        <ul id="category">
+            <li id="laptop">laptop</li>
+            <li id="shoes">shoes</li>
+            <li id="books">books
+                <p>clothes</p>
+            </li>
+            <p>clothes--</p>
+        </ul>
+        
+    </div>
+    
+    <br>
+    <div id="form">
+        <br>
+        <input type="text" id="name" data-uppercase> <br>
+        <input type="text" id="place" data-lowercase> <br>
+        <input type="text" id="job"> <br>
+
+    </div>
+    
+    <!-- <script src="28-event-bubbling.js"></script>
+    <script src="28-event-capturing-trickling.js"></script> -->
+    <script src="28-event-delegation.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+npm install @testing-library/react react-test-renderer jest-dom --save-dev
+
+
+npm install @testing-library/jest-dom --save-dev
+
+npm uninstall jest-dom
+to run ur test case 
+npm test

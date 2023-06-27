@@ -2,7 +2,7 @@ import React, {useEffect, useState, useRef} from 'react';
 import axios from 'axios';
 import { Modal, Tooltip} from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
-import {useDispatch, useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import addCountryAction from '../redux/action';
 
 function PopulationScreen() {
@@ -10,32 +10,39 @@ function PopulationScreen() {
     const [open, setOpen] = useState(false);
     const [selectCountry, setselectCountry] = useState("");
     const [ddCountry, setddCountry] = useState("");
+    const [c, sc] = useState(1);
     const dispatch = useDispatch()
 
     const [countriesData, setcountriesData] = useState([])
     useEffect(()=>{
         axios.get('/countryData.json')
         .then((res)=>{
-            console.log(res.data);
+            // console.log(res.data);
             setcountriesData(res.data)
           }).catch((err)=>{
             console.log(err);
           })
 
     },[])
-
+    let count=1
     useEffect(()=>{
-        console.log('dispatch action')
+        
+        let place = "place" + 5 + "="
+        // console.log('dispatch action')
+        console.log(place + selectCountry);
+        document.cookie=place + selectCountry;
+        // sc(c+1)
         dispatch(addCountryAction(selectCountry))
     }, [selectCountry, dispatch])
     
     const updateTodo =()=>{
         //update the todo with the new input text
         setOpen(false)
+        sc(c+1)
     }
 
     const selectCountryHandler = () =>{
-        console.log(selectinput.current.value)
+        // console.log(selectinput.current.value)
         setddCountry(selectinput.current.value)
         // setOpen(true)
     }
@@ -47,6 +54,10 @@ function PopulationScreen() {
         dispatch(addCountryAction(selectCountry))
     }
 
+    // if(selectCountry){
+    //     log
+    //     document.cookie="place=" + selectCountry
+    // }
 
   return <>
     <Modal
