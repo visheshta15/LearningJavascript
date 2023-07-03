@@ -12,6 +12,8 @@
 // and if not handle properly can leads to memory leaks
 // whenever a closure is formed, it consumed alot of memory,  it is not garbage collected
 
+//-> since the closure's scope property contains references to the same objects as the execution context's scope chain, there is a side effect. Closures requires more memory overhead in a script than a non-closure memory
+
 // garbage collector is like a program in browser or js engine, it kind of freeze up the unutilised memory
 
 function outer(){
