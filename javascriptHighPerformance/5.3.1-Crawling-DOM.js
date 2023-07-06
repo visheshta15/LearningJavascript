@@ -8,29 +8,22 @@ for(let i=0; i<5; i++){
 // nextSibling ----------------------------------------------------
 function testNextSibling(){
     child = div.firstChild
-    name = ''
-    // let name = ''
     do{
-        name = child.nextSibling
-        console.log('1', child.nextSibling, name)
+        console.log('1', child.nextSibling)
     }while(child = child.nextSibling){
-        return name
     }
 }
 testNextSibling()
 
 
-// childnodes ----------------------------------------------------
+// childnodes -------its a HTML collection ---------------------------------------------
 function testChildNodes(){
     children = div.childNodes
     childrenLen = children.length
-    names = ''
     console.log(children)
     for(let i=0; i<childrenLen; i++){
         console.log(children[i].innerHTML)
-        name = children[i].innerHTML
     }
-    return name
 
 }
-console.log(testChildNodes())
+testChildNodes()

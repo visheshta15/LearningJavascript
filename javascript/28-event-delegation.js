@@ -22,6 +22,7 @@ document.getElementById('category').addEventListener('click', (e)=>{
 
 
 
+
 document.getElementById('form').addEventListener('keyup',(e)=>{
     console.log(e);
     if(e.target.dataset.uppercase != undefined){
