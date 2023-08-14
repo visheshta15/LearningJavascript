@@ -23,8 +23,6 @@ Function.prototype.mybind = function(...args){
 }
 
 
-
-
 // let result2 = printfullname.mybind(name, "Delhi", 25);
 // result2()
 let result2 = printfullname.mybind(name, 'Kanpur');
