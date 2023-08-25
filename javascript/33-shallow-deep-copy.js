@@ -1,6 +1,5 @@
 // npm i lodash
-const _ = require('lodash');
-
+const _ = require('lodash')
 
 let a = [11, 23, 8, 7]
 let d1 = {
