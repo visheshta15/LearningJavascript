@@ -2,7 +2,7 @@
 
 const lang = ['c++', 'python', 'java', 'php'];
 for (let x of lang){
-    console.log(x);
+    console.log('for...of', x);
 }
 
 for (let x of "java"){
@@ -15,4 +15,7 @@ for (let i = 0; i < lang.length; i++) {
 
 
 // for/in statement, loop through the properties of an object
-
+// for/in statement, loop through the indexes of array
+for(let i in lang){
+    console.log('for...in', i)
+}

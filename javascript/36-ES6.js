@@ -1,0 +1,1 @@
+Iterator concept is newly introduced in ES6

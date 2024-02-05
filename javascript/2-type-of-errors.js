@@ -30,3 +30,21 @@ const c =10;
 
 console.log(2 - "2");
 console.log(2 * "2");
+
+
+//-----------------------------------------------------------------------
+// error handling
+const ageError = new Error('Invalid Age')
+const abc = (data) => {
+    try {
+        if(data<18){
+            // throw ageError;
+            throw TypeError;
+        }
+    } catch (error) {
+        console.log(error.name)
+        console.log(error.message)
+    }
+}
+
+abc(3)
