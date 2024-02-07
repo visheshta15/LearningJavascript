@@ -1,41 +1,28 @@
 //arrow function also known as fat arrow function 
 // one of the popolar feature of ES6. They introduce the new way of writing concise code 
 
-const person = {
-    fname:"",
-    lname:"",
-    age:25,
-    setName : function(name) {
-        let splitN = function(name){
-            let a = name.split(' ');
-            this.fname = a[0];
-            this.lname = a[1]; //this, "this" is not refering to person object
-            console.log(this) // refering to global object
-        }
-        splitN(name);
-        console.log(this)
-    }
-}; 
+// functional behaviour of arrow functions
 
-person.setName('visheshta kushwaha')
-console.log(person.fname); // displaying blank
+// [1] this object does not work with AF
+// If you call a function with new keyword it will behave as a class so arrow function doesnt need to behave like class at any point of time, so ""this"" always points to global object
 
-const bio = {
-    fname:"",
-    lname:"",
-    age:25,
-    setName : function(name) {
-        let splitN = (name) =>{
-            let a = name.split(' ');
-            this.fname = a[0];
-            this.lname = a[1];
-            console.log(this)
-        }
-        splitN(name);
-        console.log(this)
-    }
-}; 
+// [2] arguments object does not work with AF: to overcome above error use rest operator
+function abc(a,...num){
+    console.log(arguments)      
+}
+abc('2a---', 2,4,6,7)
 
-bio.setName('nony kushwaha')
-console.log(bio.fname);
+// const cdf = (...num) => {       // Uncaught ReferenceError: arguments is not defined
+    // console.log(arguments)      
+// }
+// cdf('2b---', 2,4,6,7)
 
+
+// [3] you cannot use new  to call arrow function
+const xyz = () => {
+    console.log('hi')
+}
+xyz()
+// const obj = new xyz() // TypeError: xyz is not a constructor
+
+// [4] function declaration should be before function call

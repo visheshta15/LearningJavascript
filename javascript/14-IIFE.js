@@ -8,4 +8,8 @@
 
 (function(name){
     console.log('hi my name is', name);
-}) ('vish')
+}) ('vish');
+
+
+// IIAF -  Immediately Invoked Arrow function	
+(() => console.log("IIAF"))();
