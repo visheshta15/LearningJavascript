@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Throttling</h1>
+    <h3 id="nc">Normal resize count : 0</h3>
+    <h3 id="tc">Throttle resize count : 0</h3>
+
+    <script>
+        let normalCount = 0;
+        let throttleCount = 0;
+        throttleFire = true
+
+        const ncH3 = document.getElementById('nc')
+        const tcH3 = document.getElementById('tc')
+
+        function normalFunction(){
+            normalCount++
+            ncH3.innerText = `Normal resize count : ${normalCount}`
+        }
+
+        function throttleFunction(){
+            if(throttleFire){
+                throttleCount++
+                tcH3.innerText = `Throttle resize count : ${throttleCount}` 
+                throttleFire = false
+                setTimeout(()=>{
+                    throttleFire = true
+                }, 1000)
+            }
+        }
+
+        window.addEventListener('resize', normalFunction);
+        window.addEventListener('resize', throttleFunction);
+    </script>
+</body>
+</html>

@@ -1,1 +1,0 @@
-In most programming languages, the majority of code execution time is spent within loops 

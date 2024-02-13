@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 90vh;
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            display: grid;
+            place-items: center;
+            width: 40vw;
+            height: 40vh;
+            border: 3px solid black;
+            text-align: center;
+        }
+        button{
+            border: none;
+            object-fit: cover;
+            height: 130px;
+            width: 180px;
+           padding: 0;
+           cursor: pointer;
+        }
+         img{
+            height: inherit;
+            width: inherit;
+
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button onclick="fireBullet()">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEHH_jUMjDJFw7uGeu7ol9_590glhEkaNOVA&usqp=CAU" alt="">
+        </button>
+        <h2 id="cc">Click Count: 0</h2>
+        <h2 id="bc">Bullet Count: 0</h2>
+    </div>
+   <script>
+    let clickCount = 0
+    let bulletCount = 0
+    let bulletFire = true;
+
+    const cch2 = document.getElementById('cc')
+    const bch2 = document.getElementById('bc')
+
+    function fireBullet(){
+        clickCount++
+        cch2.innerText = `Click Count: ${clickCount}`
+        if(bulletFire){
+            bulletCount++
+            bch2.innerText = `Bullet Count: ${bulletCount}`
+            bulletFire = false;
+            setTimeout(() => {
+                bulletFire = true
+            }, 1000);
+        }
+    }
+
+   </script>
+</body>
+</html>

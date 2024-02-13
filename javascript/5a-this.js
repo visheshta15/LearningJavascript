@@ -16,36 +16,41 @@ function sum(a,b){
 sum(10,10)
 
 
-// [2a] in Regular function, in strict mode , this refers to undefine 
+// [3]In a function, in strict mode,
 
 function sum1(a,b){
     "use strict"
     var add = a+ b;
-    console.log('2---', this);  // undefined
+    console.log('3a---', this);  // undefined
 }
-
 sum1(10,10)
 
-// [3]in a method , this refer to the owner method 
+const xyz1 = () =>{
+    "use strict";
+    console.log('3b---', this)  // not undefine in arraw function
+}
+xyz1()
+
+// [4]in a method , this refer to the owner method 
 const bio = {
     name: "vish",
     age: "25",
     sum : function(){
-        console.log('3a---',this);
+        console.log('4a---',this);
 
         function child1(){
             this.name= "kush";
-            console.log('3b---',this); // global object
+            console.log('4b---',this); // global object
         }
         child1()
 
         const child2 = () => {
-            console.log('3c---',this); // bio object
+            console.log('4c---',this); // bio object
         }
         child2()
     },
     sub : () => {
-        console.log('3d---',this); // global object
+        console.log('4d---',this); // global object
     }
 
 }
@@ -91,3 +96,11 @@ const person2 = {
 
 person2.setName('nony kushwaha')
 console.log('5c---',person2.fname);         // nony
+
+
+// [5] In an event, this refers to the element that received the event.
+let btn = document.getElementById('btn')
+btn.addEventListener('click', function(){
+    console.log('5---', this.innerText)
+    this.style.background = 'red'
+})
